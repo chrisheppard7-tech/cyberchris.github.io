@@ -17,3 +17,5 @@ export default defineConfig({
     include: ["server/**/*.test.ts", "server/**/*.spec.ts"],
   },
 });
+// Ensure root is correctly defined
+root: path.resolve(import.meta.dirname),
