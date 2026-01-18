@@ -1,17 +1,4 @@
-- name: Build
-        run: pnpm run build
-      - name: Upload Artifacts
-        uses: actions/upload-pages-artifact@v3
-        with:
-          # Matches line 26 of your vite.config.ts
-          path: './dist'
-- name: Build
-        run: pnpm run build
-      - name: Upload Artifacts
-        uses: actions/upload-pages-artifact@v3
-        with:
-          # Matches line 26 of your vite.config.ts
-          path: './diname: Deploy to GitHub Pages
+-name: Deploy to GitHub Pages
 
 on:
   push:
@@ -29,21 +16,27 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
       - name: Install pnpm
         uses: pnpm/action-setup@v4
+
       - name: Install Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
           cache: 'pnpm'
+
       - name: Install dependencies
         run: pnpm install
+
       - name: Build
         run: pnpm run build
+
       - name: Upload Artifacts
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './dist/public'
+          # This matches your vite.config.ts outDir
+          path: './dist'
 
   deploy:
     needs: build
@@ -54,4 +47,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4st'
+        uses: actions/deploy-pages@v4
