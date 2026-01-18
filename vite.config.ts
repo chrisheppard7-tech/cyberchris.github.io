@@ -8,7 +8,7 @@ import { vitePluginManusRuntime } from "vite-plugin-manus-runtime";
 const plugins = [react(), tailwindcss(), jsxLocPlugin(), vitePluginManusRuntime()];
 
 export default defineConfig({
-  base: '/', // This is essential for cyberchris.github.io
+  base: '/', // Essential for cyberchris.github.io
   plugins,
   resolve: {
     alias: {
@@ -21,7 +21,7 @@ export default defineConfig({
   root: path.resolve(import.meta.dirname, "client"),
   publicDir: path.resolve(import.meta.dirname, "client", "public"),
   build: {
-    outDir: path.resolve(import.meta.dirname, "dist"), // Changed to 'dist' for easier deployment
+    outDir: path.resolve(import.meta.dirname, "dist"),
     emptyOutDir: true,
   },
   server: {
@@ -33,10 +33,8 @@ export default defineConfig({
       ".manuscomputer.ai",
       ".manusvm.computer",
       "localhost",
+      "127.0.0.1",
     ],
-  },
-});      "127.0.0.1",
-    
     fs: {
       strict: true,
       deny: ["**/.*"],
