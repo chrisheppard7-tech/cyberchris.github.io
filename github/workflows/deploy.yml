@@ -30,8 +30,8 @@ jobs:
       - name: Upload Artifacts
         uses: actions/upload-pages-artifact@v3
         with:
-          # This must match the 'outDir' in your vite.config.ts
-          path: './dist'
+          # Your config builds to dist/public
+          path: './dist/public'
 
   deploy:
     needs: build
