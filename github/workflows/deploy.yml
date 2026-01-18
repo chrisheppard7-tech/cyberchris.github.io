@@ -18,8 +18,8 @@ jobs:
         uses: actions/checkout@v4
       - name: Install pnpm
         uses: pnpm/action-setup@v4
-        with:
-          version: 9
+        # Removing the version number allows it to automatically 
+        # use the version specified in your package.json
       - name: Install Node.js
         uses: actions/setup-node@v4
         with:
